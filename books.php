@@ -7,7 +7,7 @@ function getBooks() {
     $token = 'e45b446f5f3ed1c7f012de79a42b04fbe08cb7402d9e581e0b1771ab7c8519e2ba5fa5394dafa2174d509cfdc9db243ae6f5d0f6533d03022f315657ad42f5d106e4badbf34c4b114a2eca469e955b7cab3a499ffa2f20addbabcae594fd3b0d70cddcad88ea0fbbca5bb1f7ed2a9426cb19cac9c8968cfe14f5562b847d42e8';
 
         $client = new Client([
-            'base_uri' => 'http://localhost:1337/api/books'
+            'base_uri' => 'http://localhost:1337/'
         ]);
     
         $headers = [
@@ -20,8 +20,8 @@ function getBooks() {
       ]);
     
         $body = $response->getBody();
-        $decoded_response = json_decode($body);
-        return $decoded_response;
+        $response = json_decode($body);
+        return $response;
    
 }
 
