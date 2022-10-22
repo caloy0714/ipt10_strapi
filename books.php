@@ -4,10 +4,10 @@ require "vendor/autoload.php";
 use GuzzleHttp\Client;
 
 function getBooks() {
-    $token = 'e45b446f5f3ed1c7f012de79a42b04fbe08cb7402d9e581e0b1771ab7c8519e2ba5fa5394dafa2174d509cfdc9db243ae6f5d0f6533d03022f315657ad42f5d106e4badbf34c4b114a2eca469e955b7cab3a499ffa2f20addbabcae594fd3b0d70cddcad88ea0fbbca5bb1f7ed2a9426cb19cac9c8968cfe14f5562b847d42e8';
+    $token = '8419f0110a5cdcb473041f119cf908ba11cf2e1ae8034c0a90742f213ea2388131f8ff34e272979151366350c1a86a8a771cefa1568b369c416edd66dec1eddebe4d626cc06e7ff69dea6150bfa9196f8488109c25f420a92e6bcc466f9ba17b3ef74e4216048e06830904dac76f051f6df9768dec64757770566d8c021868a3';
 
         $client = new Client([
-            'base_uri' => 'http://localhost:1337/'
+            'base_uri' => 'http://localhost:1337/api/'
         ]);
     
         $headers = [
@@ -20,8 +20,8 @@ function getBooks() {
       ]);
     
         $body = $response->getBody();
-        $response = json_decode($body);
-        return $response;
+        $decoded_response = json_decode($body);
+        return $decoded_response;
    
 }
 
